@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BijayBizSolutions - Global Business Setup Experts</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --gray: #6b7280;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 400;
+        }
+
+        span {
+            color: var(--primary);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 20px;
+        }
+
+        .logo {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-weight: 400;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-family: 'Roboto Condensed', sans-serif;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 700;
+            font-family: 'Roboto Condensed', sans-serif;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Fjalla One', sans-serif;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-weight: 400;
+            max-width: 90%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
+            border-color: transparent;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: perspective(1000px) rotateY(-10deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-10deg) translateY(-20px); }
+        }
+
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
+            animation-play-state: paused;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e5e7eb;
+            opacity: 0;
+            transform: translateY(50px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 15px 15px 0 0;
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured {
+            border: 2px solid var(--accent);
+            position: relative;
+            background: linear-gradient(135deg, #fff9ed 0%, #fff 100%);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 15px 35px rgba(245, 158, 11, 0.2); }
+            50% { box-shadow: 0 20px 40px rgba(245, 158, 11, 0.3); }
+        }
+
+        .service-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
+            color: white;
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transform: none;
+            animation: none;
+            z-index: 2;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .service-features i {
+            color: var(--success);
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .service-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            z-index: -1;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+
+        .service-btn:hover::before {
+            opacity: 1;
+        }
+
+        .service-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .advantage {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
+
+        .advantage.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .advantage:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .advantage i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 1rem;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .advantage:hover i {
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 0.25rem;
+            opacity: 0.9;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            color: #e0f2fe;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .info-item p {
+            color: #dbeafe;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .contact-form.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-weight: 400;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3,
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            font-family: 'Fjalla One', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h3::after,
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .footer-col h3 span {
+            color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s;
+        }
+
+        .footer-col ul li.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .footer-col a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-weight: 400;
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 8px;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s;
+        }
+
+        .footer-bottom.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8fafc;
+            position: relative;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .faq-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .faq-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+            color: white;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: whatsappPulse 2s infinite;
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(15deg);
+            box-shadow: 0 15px 45px rgba(37, 211, 102, 0.6);
+            animation-play-state: paused;
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 75px;
+            background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(20px) scale(0.9);
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            font-family: 'Roboto Condensed', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        /* Policy Modal */
+        .policy-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .policy-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: modalFade 0.3s ease;
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .policy-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .policy-close:hover {
+            background: var(--secondary);
+            transform: rotate(90deg);
+        }
+
+        .policy-content h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Fjalla One', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .policy-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+            font-family: 'Fjalla One', sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                padding: 2rem 0;
+                gap: 0;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1rem 0;
+                width: 100%;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+                transition: all 0.3s;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 1rem;
+                font-size: 1.1rem;
+                transition: all 0.3s;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 32px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-text {
+                display: none;
+            }
+            
+            .policy-content {
+                padding: 2rem;
+                margin: 20px;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .service-card, .contact-form, .contact-info {
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Fix for horizontal scrolling */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        img, svg, video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container, section {
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">BijayBiz<span>Solutions</span></a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+17432592090" class="btn-call"><i class="fas fa-phone"></i> Call Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Global Business Setup <span>Made Simple</span></h1>
+                <p>Expert solutions for non-resident company registration and international business account setup. Fast, reliable, and hassle-free service for global entrepreneurs.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn-secondary">Free Consultation</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Global Business Solutions">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our <span>Services</span></h2>
+            <p class="section-subtitle">Comprehensive solutions for your international business needs</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-flag-usa"></i>
+                    </div>
+                    <h3>Non-Resident USA LLC Registration</h3>
+                    <p>Complete LLC formation for non-residents. Documentation, EIN, registered agent, and compliance support.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Fast Processing (3-5 days)</li>
+                        <li><i class="fas fa-check"></i> No Physical Presence Required</li>
+                        <li><i class="fas fa-check"></i> Bank Account Assistance</li>
+                        <li><i class="fas fa-check"></i> Annual Compliance Support</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Non-Resident UK Ltd Registration</h3>
+                    <p>UK Limited Company formation for non-residents. Director appointment, address service, and VAT registration.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Quick Incorporation (24-48 hours)</li>
+                        <li><i class="fas fa-check"></i> Nominee Services Available</li>
+                        <li><i class="fas fa-check"></i> Ongoing Compliance</li>
+                        <li><i class="fas fa-check"></i> VAT Registration Assistance</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                    <h3>PayPal Business Account Setup</h3>
+                    <p>PayPal Business account setup and verification for international businesses. High-limit accounts with smooth onboarding.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Merchant Account Setup</li>
+                        <li><i class="fas fa-check"></i> Verification Support</li>
+                        <li><i class="fas fa-check"></i> Dispute Resolution Help</li>
+                        <li><i class="fas fa-check"></i> Multi-Currency Support</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Wise Business Account Setup</h3>
+                    <p>Multi-currency Wise Business account setup. Receive payments in 50+ currencies with low conversion fees.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Multi-Currency Accounts</li>
+                        <li><i class="fas fa-check"></i> Borderless Banking</li>
+                        <li><i class="fas fa-check"></i> International Transfers</li>
+                        <li><i class="fas fa-check"></i> Business Debit Card</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Revolut Business Account Setup</h3>
+                    <p>Digital banking solution for global businesses. Corporate cards, expense management, and team budgeting.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Corporate Cards</li>
+                        <li><i class="fas fa-check"></i> Expense Management</li>
+                        <li><i class="fas fa-check"></i> API Integration</li>
+                        <li><i class="fas fa-check"></i> Bulk Payments</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>WorldFirst Business Account Setup</h3>
+                    <p>International payment solutions with competitive exchange rates. Optimized for e-commerce and trading businesses.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Competitive FX Rates</li>
+                        <li><i class="fas fa-check"></i> Bulk Payments</li>
+                        <li><i class="fas fa-check"></i> Risk Management</li>
+                        <li><i class="fas fa-check"></i> E-commerce Integration</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3>TikTok Balance Withdrawal</h3>
+                    <p>Withdraw your TikTok earnings to international bank accounts. Compliance with platform policies and fast processing.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Creator Fund Withdrawal</li>
+                        <li><i class="fas fa-check"></i> Direct to Bank Account</li>
+                        <li><i class="fas fa-check"></i> Tax Documentation Help</li>
+                        <li><i class="fas fa-check"></i> 24-48 Hour Processing</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Withdraw Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Why Choose <span>BijayBizSolutions</span></h2>
+                <p>With years of expertise in international business setup, we simplify complex processes so you can focus on growing your business globally.</p>
+                
+                <div class="advantages">
+                    <div class="advantage">
+                        <i class="fas fa-clock"></i>
+                        <h3>Fast Setup</h3>
+                        <p>USA LLC in 3-5 days, UK Ltd in 24 hours, Account setup in 48 hours</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Dedicated support team across timezones via WhatsApp, Email & Phone</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>100% Compliant</h3>
+                        <p>All setups follow legal requirements and platform policies</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Global Reach</h3>
+                        <p>Services available for clients from 100+ countries worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <p class="section-subtitle">Contact us for a free consultation on your business needs</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@bijaybizsolutions.com</p>
+                            <p>support@bijaybizsolutions.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone (USA/Canada)</h4>
+                            <p>+1 (743) 259-2090</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone (Nepal)</h4>
+                            <p>+977 9804653044</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address (Nepal)</h4>
+                            <p>Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours (Nepali Time)</h4>
+                            <p>Sunday - Friday: 10AM - 5PM</p>
+                            <p>Saturday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://facebook.com/bijaybizsolutions" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/17432592090" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" id="contactFormElement">
+                    <h3>Send Your Query</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Full Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="WhatsApp Number with Country Code *" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Service You Need *</option>
+                                <option>Non-Resident USA LLC Registration</option>
+                                <option>Non-Resident UK Ltd Registration</option>
+                                <option>PayPal Business Account Setup</option>
+                                <option>Wise Business Account Setup</option>
+                                <option>Revolut Business Account Setup</option>
+                                <option>WorldFirst Business Account Setup</option>
+                                <option>TikTok Balance Withdrawal</option>
+                                <option>Multiple Services</option>
+                                <option>Other Query</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Country of Residence *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Your Specific Requirements *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message & Get Free Consultation</button>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray); text-align: center;">
+                            <i class="fas fa-shield-alt"></i> We respect your privacy. Your information is secure with us.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+            <div style="max-width: 800px; margin: 2rem auto;">
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do I need to visit USA/UK for company registration?</h4>
+                    <p>No, you don't need to visit. We handle everything remotely. All processes are completed online with digital documentation.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> How long does PayPal/Wise account setup take?</h4>
+                    <p>Typically 2-5 business days after document submission. We expedite the verification process for faster approvals.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Can I withdraw TikTok balance to Nepal?</h4>
+                    <p>Yes, we facilitate TikTok withdrawals to Nepal and most other countries, following all platform policies and local regulations.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> What documents are required for USA LLC registration?</h4>
+                    <p>Passport copy, proof of address, and basic business details. We guide you through the entire documentation process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>BijayBiz<span>Solutions</span></h3>
+                    <p>Your trusted partner for international business registration and financial account solutions. Global reach with local expertise.</p>
+                    <div style="margin-top: 1rem;">
+                        <p><i class="fas fa-certificate"></i> Certified Business Consultants</p>
+                        <p><i class="fas fa-award"></i> 1000+ Successful Setups</p>
+                        <p><i class="fas fa-globe"></i> Serving 100+ Countries</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Free Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#services">USA LLC Registration</a></li>
+                        <li><a href="#services">UK Ltd Registration</a></li>
+                        <li><a href="#services">PayPal Setup</a></li>
+                        <li><a href="#services">Wise Business Setup</a></li>
+                        <li><a href="#services">TikTok Withdrawal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" onclick="showPolicy('privacy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showPolicy('terms')">Terms of Service</a></li>
+                        <li><a href="#" onclick="showPolicy('refund')">Refund Policy</a></li>
+                        <li><a href="#" onclick="showPolicy('disclaimer')">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BijayBizSolutions. All rights reserved. | Registered Business Consultants</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #9ca3af;">Disclaimer: We are business consultants, not lawyers. We facilitate the process but recommend consulting with a legal professional for specific legal advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Policy Modal -->
+    <div class="policy-modal" id="policyModal">
+        <div class="policy-content">
+            <div class="policy-close" onclick="closePolicy()">
+                <i class="fas fa-times"></i>
+            </div>
+            <h2 id="policyTitle">Privacy Policy</h2>
+            <div id="policyContent">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button with Number -->
+    <a href="https://wa.me/17432592090?text=Hi%20BijayBizSolutions,%20I%20want%20to%20inquire%20about%20your%20services%20for%20business%20setup%20and%20account%20registration." 
+       class="whatsapp-float" 
+       target="_blank" 
+       title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-text">Chat on WhatsApp<br>+1 (743) 259-2090</div>
+    </a>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+            
+            // Animate menu items
+            if (navMenu.classList.contains('active')) {
+                const menuItems = document.querySelectorAll('.nav-menu li');
+                menuItems.forEach((item, index) => {
+                    item.style.transitionDelay = `${index * 0.1}s`;
+                });
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const name = this.querySelector('input[type="text"]').value;
+                const phone = this.querySelector('input[type="tel"]').value;
+                const service = this.querySelector('select').value;
+                
+                // Show success message
+                alert(`Thank you ${name}! Your query about "${service}" has been received. We will contact you within 2 hours on your WhatsApp number: ${phone}`);
+                
+                // Reset form
+                this.reset();
+            });
+        }
+
+        // Advanced Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('service-card')) {
+                        entry.target.style.transitionDelay = `${Math.random() * 0.3}s`;
+                    }
+                    entry.target.classList.add('visible');
+                    
+                    // Special animation for footer links
+                    if (entry.target.classList.contains('footer-col')) {
+                        const links = entry.target.querySelectorAll('li');
+                        links.forEach((link, index) => {
+                            link.style.transitionDelay = `${index * 0.1}s`;
+                            link.classList.add('visible');
+                        });
+                    }
+                    
+                    if (entry.target.classList.contains('footer-bottom')) {
+                        entry.target.classList.add('visible');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.service-card, .advantage, .faq-item, .footer-col, .footer-bottom, .contact-form').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+            
+            // Hide/show navbar on scroll
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Preload animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 300);
+            
+            // Animate hero elements sequentially
+            const heroContent = document.querySelector('.hero-content');
+            const heroImage = document.querySelector('.hero-image');
+            
+            if (heroContent && heroImage) {
+                heroContent.style.opacity = '0';
+                heroContent.style.transform = 'translateX(-50px)';
+                heroImage.style.opacity = '0';
+                heroImage.style.transform = 'translateX(50px)';
+                
+                setTimeout(() => {
+                    heroContent.style.transition = 'all 0.8s ease';
+                    heroImage.style.transition = 'all 0.8s ease';
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateX(0)';
+                    heroImage.style.opacity = '1';
+                    heroImage.style.transform = 'translateX(0)';
+                }, 500);
+            }
+        });
+
+        // WhatsApp message prefill
+        const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
+        whatsappButtons.forEach(button => {
+            if (button.href.includes('wa.me')) {
+                const message = "Hello BijayBizSolutions, I'm interested in your services. Can you please provide more information?";
+                button.href = `https://wa.me/17432592090?text=${encodeURIComponent(message)}`;
+            }
+        });
+
+        // Facebook link
+        const facebookLinks = document.querySelectorAll('a[title="Facebook"]');
+        facebookLinks.forEach(link => {
+            link.href = 'https://facebook.com/bijaybizsolutions';
+        });
+
+        // Policy Modal Functions
+        const policies = {
+            privacy: {
+                title: "Privacy Policy",
+                content: `
+                    <h3>1. Information We Collect</h3>
+                    <p>We collect personal information that you provide to us when you use our services, including:</p>
+                    <ul>
+                        <li>Name, email address, and phone number</li>
+                        <li>Business information and requirements</li>
+                        <li>Payment information for service fees</li>
+                        <li>Documentation for company registration</li>
+                    </ul>
+
+                    <h3>2. How We Use Your Information</h3>
+                    <p>We use your information to:</p>
+                    <ul>
+                        <li>Provide and manage our services</li>
+                        <li>Process company registrations</li>
+                        <li>Set up business accounts</li>
+                        <li>Communicate with you about your services</li>
+                        <li>Send important updates and notifications</li>
+                    </ul>
+
+                    <h3>3. Data Protection</h3>
+                    <p>We implement security measures to protect your personal information:</p>
+                    <ul>
+                        <li>Encrypted data transmission</li>
+                        <li>Secure document storage</li>
+                        <li>Limited access to personal data</li>
+                        <li>Regular security audits</li>
+                    </ul>
+
+                    <h3>4. Third-Party Services</h3>
+                    <p>We may share information with:</p>
+                    <ul>
+                        <li>Government agencies for registration purposes</li>
+                        <li>Financial institutions for account setup</li>
+                        <li>Payment processors for transaction processing</li>
+                        <li>Legal authorities when required by law</li>
+                    </ul>
+
+                    <h3>5. Your Rights</h3>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Access your personal information</li>
+                        <li>Correct inaccurate data</li>
+                        <li>Request deletion of your data</li>
+                        <li>Opt-out of marketing communications</li>
+                    </ul>
+
+                    <h3>6. Contact Us</h3>
+                    <p>For privacy-related questions, contact us at privacy@bijaybizsolutions.com</p>
+                    <p><strong>Last Updated:</strong> January 2025</p>
+                `
+            },
+            terms: {
+                title: "Terms of Service",
+                content: `
+                    <h3>1. Agreement to Terms</h3>
+                    <p>By using our services, you agree to these terms and conditions. These terms constitute a legal agreement between you and BijayBizSolutions.</p>
+
+                    <h3>2. Services Provided</h3>
+                    <p>We provide business setup services including:</p>
+                    <ul>
+                        <li>Company registration in USA and UK</li>
+                        <li>Business account setup</li>
+                        <li>TikTok balance withdrawal assistance</li>
+                        <li>Consultation and advisory services</li>
+                    </ul>
+
+                    <h3>3. Client Responsibilities</h3>
+                    <p>As our client, you agree to:</p>
+                    <ul>
+                        <li>Provide accurate and complete information</li>
+                        <li>Submit required documents promptly</li>
+                        <li>Make timely payments for services</li>
+                        <li>Comply with all applicable laws</li>
+                    </ul>
+
+                    <h3>4. Fees and Payments</h3>
+                    <p>Our fee structure includes:</p>
+                    <ul>
+                        <li>Service fees for each specific service</li>
+                        <li>Government fees and charges</li>
+                        <li>Additional costs for expedited services</li>
+                        <li>Payment terms: 50% advance, 50% upon completion</li>
+                    </ul>
+
+                    <h3>5. Service Guarantee</h3>
+                    <p>We guarantee:</p>
+                    <ul>
+                        <li>Professional service delivery</li>
+                        <li>Timely completion as specified</li>
+                        <li>Compliance with legal requirements</li>
+                        <li>Confidentiality of your information</li>
+                    </ul>
+
+                    <h3>6. Limitation of Liability</h3>
+                    <p>Our liability is limited to:</p>
+                    <ul>
+                        <li>Service fees paid by you</li>
+                        <li>Direct damages caused by our negligence</li>
+                        <li>We are not liable for indirect or consequential damages</li>
+                    </ul>
+
+                    <h3>7. Termination</h3>
+                    <p>Either party may terminate services with written notice. Outstanding fees remain payable.</p>
+                `
+            },
+            refund: {
+                title: "Refund Policy",
+                content: `
+                    <h3>1. Refund Eligibility</h3>
+                    <p>Refunds are available under the following conditions:</p>
+                    <ul>
+                        <li>If we fail to initiate the service within 7 days of payment</li>
+                        <li>If government authorities reject the application due to our error</li>
+                        <li>If you cancel before we begin processing your application</li>
+                    </ul>
+
+                    <h3>2. Non-Refundable Services</h3>
+                    <p>The following are non-refundable:</p>
+                    <ul>
+                        <li>Government fees and third-party charges</li>
+                        <li>Services already initiated or completed</li>
+                        <li>Consultation fees</li>
+                        <li>Expedited service fees once processing begins</li>
+                    </ul>
+
+                    <h3>3. Refund Process</h3>
+                    <p>To request a refund:</p>
+                    <ul>
+                        <li>Submit a written request to refunds@bijaybizsolutions.com</li>
+                        <li>Include your transaction details and reason for refund</li>
+                        <li>Processing time: 7-14 business days</li>
+                        <li>Refunds issued via original payment method</li>
+                    </ul>
+
+                    <h3>4. Partial Refunds</h3>
+                    <p>Partial refunds may be granted in cases where:</p>
+                    <ul>
+                        <li>Only part of the service can be completed</li>
+                        <li>Client provides incomplete documentation</li>
+                        <li>External factors prevent full service completion</li>
+                    </ul>
+
+                    <h3>5. Service Cancellation</h3>
+                    <p>Cancellation terms:</p>
+                    <ul>
+                        <li>100% refund if cancelled within 24 hours of payment</li>
+                        <li>50% refund if cancelled before service initiation</li>
+                        <li>No refund after service initiation</li>
+                    </ul>
+
+                    <h3>6. Contact for Refunds</h3>
+                    <p>Email: refunds@bijaybizsolutions.com</p>
+                    <p>Response time: 1-2 business days</p>
+                `
+            },
+            disclaimer: {
+                title: "Disclaimer",
+                content: `
+                    <h3>1. Service Nature</h3>
+                    <p>BijayBizSolutions provides business consultancy and facilitation services. We are not:</p>
+                    <ul>
+                        <li>A law firm or legal service provider</li>
+                        <li>Financial advisors or investment consultants</li>
+                        <li>Government agency or regulatory body</li>
+                        <li>Tax advisors or accountants</li>
+                    </ul>
+
+                    <h3>2. No Legal Advice</h3>
+                    <p>Our services do not constitute legal advice. We recommend:</p>
+                    <ul>
+                        <li>Consulting with a qualified attorney for legal matters</li>
+                        <li>Seeking tax advice from certified professionals</li>
+                        <li>Verifying requirements with relevant authorities</li>
+                    </ul>
+
+                    <h3>3. Accuracy of Information</h3>
+                    <p>While we strive for accuracy:</p>
+                    <ul>
+                        <li>Information may change without notice</li>
+                        <li>Government regulations may vary</li>
+                        <li>Third-party requirements may differ</li>
+                        <li>We are not responsible for changes in laws or policies</li>
+                    </ul>
+
+                    <h3>4. Service Outcomes</h3>
+                    <p>We cannot guarantee:</p>
+                    <ul>
+                        <li>Specific outcomes or results</li>
+                        <li>Approval of applications by third parties</li>
+                        <li>Account setup success rates</li>
+                        <li>Withdrawal amounts or timing</li>
+                    </ul>
+
+                    <h3>5. Third-Party Services</h3>
+                    <p>We facilitate access to third-party services including:</p>
+                    <ul>
+                        <li>PayPal, Wise, Revolut, WorldFirst</li>
+                        <li>Government registration portals</li>
+                        <li>Payment processors</li>
+                        <li>We are not responsible for third-party terms or actions</li>
+                    </ul>
+
+                    <h3>6. Liability Limitation</h3>
+                    <p>Our maximum liability is limited to the service fees paid. We are not liable for:</p>
+                    <ul>
+                        <li>Indirect, consequential, or incidental damages</li>
+                        <li>Loss of profits or business opportunities</li>
+                        <li>Third-party actions or decisions</li>
+                        <li>Changes in laws or regulations</li>
+                    </ul>
+
+                    <h3>7. Acceptance</h3>
+                    <p>By using our services, you acknowledge and accept this disclaimer.</p>
+                `
+            }
+        };
+
+        function showPolicy(policyType) {
+            const modal = document.getElementById('policyModal');
+            const title = document.getElementById('policyTitle');
+            const content = document.getElementById('policyContent');
+            
+            if (policies[policyType]) {
+                title.textContent = policies[policyType].title;
+                content.innerHTML = policies[policyType].content;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePolicy() {
+            const modal = document.getElementById('policyModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('policyModal');
+            if (e.target === modal) {
+                closePolicy();
+            }
+        });
+
+        // Fix for website shifting issues
+        window.addEventListener('resize', () => {
+            // Force reflow to fix layout issues
+            document.body.style.display = 'none';
+            document.body.offsetHeight; // Trigger reflow
+            document.body.style.display = '';
+        });
+
+        // Prevent horizontal scrolling
+        document.body.addEventListener('wheel', (e) => {
+            if (e.deltaY === 0) e.preventDefault();
+        }, { passive: false });
+
+        // Fix for mobile viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+    </script>
+</body>
+</html>
